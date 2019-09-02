@@ -9,7 +9,26 @@ https://github.com/gogo/protobuf
 https://github.com/protocolbuffers/protobuf
 
 
-```
+```go
+// test/sizeunderscore/sizeunderscore.proto
+
+syntax = "proto2";
+package sizeunderscore;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.populate_all) = true;
+option (gogoproto.testgen-all) = true;
+option (gogoproto.equal_all) = true;
+
+message SizeMessage {
+  optional int64 size = 1;
+  optional bool Equal = 2;
+  optional string String = 3;
+}
 ```
 
 ```
